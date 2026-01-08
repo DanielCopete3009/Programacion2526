@@ -11,15 +11,17 @@ package ejercicio_1_Persona;
 public class Persona {
 
     String nombre;
-    byte edad;
+    int edad;
     double estatura;
    
     void saludar(){
+        System.out.print("hola");
        }
     void cumplir(){
-        
+        edad = edad +1;
     }
-    void crecer(){
+    void crecer(double incremento){
+        estatura = estatura + incremento;
     }
 }
     
