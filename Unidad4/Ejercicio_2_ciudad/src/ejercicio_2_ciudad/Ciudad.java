@@ -1,13 +1,45 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package ejercicio_2_ciudad;
 
-/**
- *
- * @author 06_1DAW_Alum
- */
 public class Ciudad {
-    void Persona(){
+
+    public static void main(String[] args) {
+
+        // Crear personas
+        Persona daniel = new Persona("Daniel");
+        Persona manuel = new Persona("Manuel");
+        Persona pepe = new Persona("Pepe");
+
+        // Tambien se puede poner:
+        Persona juan;
+        juan = new  Persona();
+        
+        
+        
+        
+        
+        
+        
+        // Imprimir personas
+        System.out.println(daniel);
+        System.out.println(manuel);
+        System.out.println(pepe);
     }
+
+    // Clase Persona
+    static class Persona {
+        String nombre;
+
+        // Constructor
+        public Persona(String nombre) {
+            this.nombre = nombre;
+        }
+
+        private Persona() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+
+    }
+}
+
+
