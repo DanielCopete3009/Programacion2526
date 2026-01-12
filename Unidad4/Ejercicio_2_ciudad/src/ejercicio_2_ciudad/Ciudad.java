@@ -9,42 +9,36 @@ public class Ciudad {
         Persona manuel = new Persona();
         Persona pepe = new Persona();
 
-        // Tambien se puede poner:
+        // Otra forma de crear objeto
         Persona juan;
-        juan = new  Persona();
-        
-        // El operador '.' accede  a los miembros de un objeto
-        juan.nombre = "juanje";
-        daniel.nombre = "dani";
-        manuel.nombre = "manuelito";
+        juan = new Persona();
+
+        // Asignar atributos
+        juan.nombre = "Juanje";
+        juan.edad = 20;
+        juan.estatura = 180;
+
+        daniel.nombre = "Dani";
+        daniel.edad = 22;
+        daniel.estatura = 175;
+
+        manuel.nombre = "Manuelito";
+        manuel.edad = 25;
+        manuel.estatura = 170;
+
         pepe.nombre = "Pepe";
-        
-        
-        
-        
-        
-        
+        pepe.edad = 30;
+        pepe.estatura = 165;
+
         // Imprimir personas
         System.out.println(daniel);
         System.out.println(manuel);
         System.out.println(pepe);
-    }
+        System.out.println(juan);
 
-    // Clase Persona
-    static class Persona {
-        String nombre;
-
-        // Constructor
-        public Persona(String nombre) {
-            this.nombre = nombre;
-        }
-
-        private Persona() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-
+        System.out.println("Hola soy " + juan.nombre + " y tengo " + juan.edad + " años");
     }
 }
+
 
 
