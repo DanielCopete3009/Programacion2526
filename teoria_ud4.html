@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Teoría Java - Programación Orientada a Objetos | Daniel Copete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <h1>
+                <a href="index.html" style="text-decoration: none; color: white;">
+                    Daniel Copete
+                </a>
+            </h1>
+            <p>Portfolio de Java | Programación Orientada a Objetos</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="sobre_mi.html">Sobre mí</a></li>
+                <li><a href="index.html#temas">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section id="teoria-java-poo" class="about">
+<div class="container">
+
+<h2>Teoría de Java – Programación Orientada a Objetos (POO)</h2>
+
+<div class="card-box about-box">
+
+<!-- ================= INTRODUCCIÓN ================= -->
+<h3>I. Introducción a la Programación Orientada a Objetos</h3>
+<p>
+La <strong>Programación Orientada a Objetos (POO)</strong> es un paradigma de programación
+que organiza el software en <strong>objetos</strong>, los cuales representan entidades del mundo real.
+</p>
+<p>
+En Java, <strong>todo gira en torno a las clases y los objetos</strong>. Este enfoque facilita:
+</p>
+<ul>
+    <li>La reutilización del código</li>
+    <li>El mantenimiento del software</li>
+    <li>La escalabilidad de los programas</li>
+</ul>
+
+<hr>
+
+<!-- ================= CLASES Y OBJETOS ================= -->
+<h3>II. Clases y Objetos</h3>
+
+<h4>¿Qué es una Clase?</h4>
+<p>
+Una <strong>clase</strong> es una plantilla o molde que define las características y comportamientos
+de un objeto.
+</p>
+
+<pre><code>class Persona {
+    String nombre;
+    int edad;
+}</code></pre>
+
+<h4>¿Qué es un Objeto?</h4>
+<p>
+Un <strong>objeto</strong> es una instancia de una clase. Representa un elemento concreto creado
+a partir de esa plantilla.
+</p>
+
+<pre><code>Persona p1 = new Persona();
+p1.nombre = "Ana";
+p1.edad = 20;</code></pre>
+
+<hr>
+
+<!-- ================= ATRIBUTOS Y MÉTODOS ================= -->
+<h3>III. Atributos y Métodos</h3>
+
+<h4>Atributos</h4>
+<p>
+Los <strong>atributos</strong> son variables que describen el estado de un objeto.
+</p>
+
+<h4>Métodos</h4>
+<p>
+Los <strong>métodos</strong> son funciones que definen el comportamiento de un objeto.
+</p>
+
+<pre><code>class Persona {
+    String nombre;
+    int edad;
+
+    void saludar() {
+        System.out.println("Hola, me llamo " + nombre);
+    }
+}</code></pre>
+
+<hr>
+
+<!-- ================= CONSTRUCTORES ================= -->
+<h3>IV. Constructores</h3>
+<p>
+Un <strong>constructor</strong> es un método especial que se ejecuta cuando se crea un objeto.
+Su función principal es <strong>inicializar los atributos</strong>.
+</p>
+
+<pre><code>class Persona {
+    String nombre;
+    int edad;
+
+    Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+}</code></pre>
+
+<pre><code>Persona p1 = new Persona("Carlos", 25);</code></pre>
+
+<hr>
+
+<!-- ================= ENCAPSULACIÓN ================= -->
+<h3>V. Encapsulación</h3>
+<p>
+La <strong>encapsulación</strong> consiste en ocultar los datos internos de un objeto
+y permitir el acceso solo mediante métodos públicos.
+</p>
+
+<h4>Modificadores de Acceso</h4>
+<ul>
+    <li><strong>private:</strong> solo accesible desde la misma clase</li>
+    <li><strong>public:</strong> accesible desde cualquier clase</li>
+    <li><strong>protected:</strong> accesible desde clases hijas</li>
+</ul>
+
+<pre><code>class Persona {
+    private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+}</code></pre>
+
+<hr>
+
+<!-- ================= HERENCIA ================= -->
+<h3>VI. Herencia</h3>
+<p>
+La <strong>herencia</strong> permite que una clase herede atributos y métodos de otra.
+Se utiliza la palabra clave <code>extends</code>.
+</p>
+
+<pre><code>class Empleado extends Persona {
+    double salario;
+}</code></pre>
+
+<p>
+La clase <code>Empleado</code> hereda los atributos y métodos de <code>Persona</code>.
+</p>
+
+<hr>
+
+<!-- ================= POLIMORFISMO ================= -->
+<h3>VII. Polimorfismo</h3>
+<p>
+El <strong>polimorfismo</strong> permite que un mismo método se comporte de diferentes formas
+según el objeto que lo invoque.
+</p>
+
+<pre><code>class Animal {
+    void hacerSonido() {
+        System.out.println("El animal hace un sonido");
+    }
+}
+
+class Perro extends Animal {
+    void hacerSonido() {
+        System.out.println("El perro ladra");
+    }
+}</code></pre>
+
+<pre><code>Animal a = new Perro();
+a.hacerSonido(); // El perro ladra</code></pre>
+
+<hr>
+
+<!-- ================= ABSTRACCIÓN ================= -->
+<h3>VIII. Abstracción</h3>
+<p>
+La <strong>abstracción</strong> consiste en mostrar solo los detalles esenciales
+y ocultar la implementación.
+</p>
+
+<h4>Clases Abstractas</h4>
+<pre><code>abstract class Figura {
+    abstract double calcularArea();
+}</code></pre>
+
+<h4>Interfaces</h4>
+<pre><code>interface Volable {
+    void volar();
+}</code></pre>
+
+<hr>
+
+<!-- ================= RESUMEN ================= -->
+<h3>IX. Resumen de los Pilares de la POO</h3>
+<ul>
+    <li><strong>Encapsulación:</strong> proteger los datos</li>
+    <li><strong>Herencia:</strong> reutilizar código</li>
+    <li><strong>Polimorfismo:</strong> múltiples comportamientos</li>
+    <li><strong>Abstracción:</strong> ocultar detalles internos</li>
+</ul>
+
+</div>
+
+<div class="back-link" style="text-align: center; margin-top: 20px;">
+    <a href="index.html#temas">&larr; Volver al portafolio</a>
+</div>
+
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+    <p>&copy; 2025 Daniel Copete. Todos los derechos reservados.</p>
+    <p>
+        Sígueme en 
+        <a href="https://github.com/DanielCopete3009" target="_blank">GitHub</a> |
+        <a href="https://dcopjim.wordpress.com/" target="_blank">Blog de WordPress</a>
+    </p>
+</div>
+</footer>
+
+</body>
+</html>
