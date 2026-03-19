@@ -26,7 +26,7 @@ public class Main {
 		
 		// Si el animal implementa la interfaz Volador, lo convertimos a Volador y llamamos a su método volar()	
 		if (animal instanceof Volador)
-			((Pajaro) animal).volar();
+			((Volador) animal).volar();
 			
 			
 			
