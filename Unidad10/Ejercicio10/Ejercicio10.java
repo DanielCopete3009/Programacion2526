@@ -16,9 +16,14 @@ public class Ejercicio10 {
                     "fran",
                     "Fr4n");
 
+            
+            
+            
+            // Este objeto es el encargado de empaquetar tus
+            //sentencias SQL en texto y enviarlas al servidor para que se ejecuten.
             Statement stmt = con.createStatement();
 
-            // Borrar todos los registros
+            // Borrar todos los registros este devuelve un número entero (int) que representa la cantidad de filas afectadas
             stmt.executeUpdate("DELETE FROM producto");
 
             // Insertar nuevos productos

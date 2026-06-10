@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Artista implements Serializable {
-
+	//es una constante especial que utiliza Java para el control de versiones de los objetos
 	private static final long serialVersionUID = 1L;
 	
 	private String nombre;

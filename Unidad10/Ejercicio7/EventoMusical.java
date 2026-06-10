@@ -16,6 +16,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Transient;
 
 //Actividad 5
+//Sirven para dejar consultas preparadas y "guardadas"
 @NamedQuery(
 		name = "EventoMusical.buscarPorNombre",
         query = "SELECT e FROM EventoMusical e WHERE e.nombre = :nombre"

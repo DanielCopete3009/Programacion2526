@@ -11,19 +11,33 @@ public class Ejercicio12 {
 
 		try {
 
-			// Abrimos la conexión con la base de datos
+			// Abrimos la conexión con la base de datos, fran es el nombre de usuario de la base de datos y Fr4n la contraseña
 			Connection con = DriverManager.getConnection(
 					"jdbc:mariadb://localhost:3306/tienda?allowPublicKeyRetrieval=true&useSSL=false", "fran", "Fr4n");
 
 			System.out.println("¡Conexión exitosa!");
 
-			// Obtenemos los metadatos de la base de datos
+			// Obtenemos los metadatos de la base de datos el objeto meta ahora sabe cosas como que tablas existe y columnas
 			DatabaseMetaData meta = con.getMetaData();
 
 			// Tablas de la base de datos
 
 			System.out.println("\nTABLAS:");
-
+			
+			/*
+			 * El programa le pide al objeto meta que busque todas las tablas de usuario de
+			 * la base de datos
+			 */
+			
+			/*
+			 * Los dos primeros parámetros son null para indicarle que busque en el catálogo
+			 * y esquema que vienen por defecto en la conexión
+			 * 
+			 * 
+			 * % es como un comodin por lo que buscará tablas con cualquier nombre.
+			 	El filtro new String[] {"TABLE"}
+			 */
+			
 			ResultSet tablas = meta.getTables(null, null, "%", new String[] {"TABLE"});
 
 			while (tablas.next()) {
@@ -33,7 +47,12 @@ public class Ejercicio12 {
 			// Columnas de la tabla producto
 
 			System.out.println("\nCOLUMNAS DE PRODUCTO:");
+			
+			// "producto": Le dice explícitamente que busque solo dentro de la tabla llamada "producto".
 
+			// "%": Trae cualquier nombre de columna que exista dentro de ella.
+			
+			
 			ResultSet columnas = meta.getColumns(null, null, "producto", "%");
 
 			while (columnas.next()) {
